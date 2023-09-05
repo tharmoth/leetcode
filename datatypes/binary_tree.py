@@ -10,6 +10,9 @@ class TreeNode:
     def __str__(self):
         return str(binary_tree_to_list(self))
 
+    def __eq__(self, other):
+        return isinstance(other, TreeNode) and self.val == other.val and self.left == other.left and self.right == other.right
+
 
 def list_to_binary_tree(lst):
     """
