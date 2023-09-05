@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode:
     """
     Definition for a binary tree node.
@@ -12,6 +14,17 @@ class TreeNode:
 
     def __eq__(self, other):
         return isinstance(other, TreeNode) and self.val == other.val and self.left == other.left and self.right == other.right
+
+    def find(self, value) -> Optional['TreeNode']:
+        nodes = [self]
+        while nodes:
+            node = nodes.pop()
+            if node:
+                if node.val == value:
+                    return node
+                nodes.append(node.left)
+                nodes.append(node.right)
+        return None
 
 
 def list_to_binary_tree(lst):
