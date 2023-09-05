@@ -26,6 +26,7 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 ### Problems in my solution
 It's space complexity is higher than average, there are probably some tricks that could be used to reduce it. A recursive solution may hold less data in memory for example
 
+---
 ## Recursive Method
 ### Method
 I decided to go ahead and implement the recursive method to see how it compares. It substantially reduced the code complexity along with memory usage, but increased runtime.
@@ -44,6 +45,8 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
   
     return root
 ```
+### Problems in my solution
+The code could be reduced to a one liner, or otherwise put the invert tree function calls on the same line as the data flip, but I don't think it's worth making the code less readable.
 
 ---
 ### Links:
