@@ -5,6 +5,14 @@ from datatypes.binary_tree import list_to_binary_tree
 
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root is not None:
+            root.left, root.right = root.right, root.left
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+
+        return root
+
+    def invertTreeOld(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         nodes = [root]
         while nodes:
             node = nodes.pop(0)

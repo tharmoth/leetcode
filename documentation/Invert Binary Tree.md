@@ -2,7 +2,7 @@
 
 > Given the `root` of a binary tree, invert the tree, and return _its root_.
 ---
-## Traverse Binary Tree
+## Binary Tree Stack
 ### Method
 In order to invert the tree have a stack of nodes which you initalize with the root node. While the stack contains nodes pop the top element off of the stack, invert it, and and it's children to the stack and continue. Do this until the entire tree is inverted.
 
@@ -25,6 +25,25 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 ```
 ### Problems in my solution
 It's space complexity is higher than average, there are probably some tricks that could be used to reduce it. A recursive solution may hold less data in memory for example
+
+## Recursive Method
+### Method
+I decided to go ahead and implement the recursive method to see how it compares. It substantially reduced the code complexity along with memory usage, but increased runtime.
+
+### Complexity
+Time Complexity - O(n) it still traverses each node
+Space Complexity - O(n) it still holds the parent nodes in memory
+
+### Code
+```py
+def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:  
+    if root is not None:  
+        root.left, root.right = root.right, root.left  
+        self.invertTree(root.left)  
+        self.invertTree(root.right)  
+  
+    return root
+```
 
 ---
 ### Links:
