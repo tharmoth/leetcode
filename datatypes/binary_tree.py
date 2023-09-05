@@ -72,3 +72,20 @@ def binary_tree_to_list(root):
     while result[-1] is None:
         result.pop()
     return result
+
+
+def find(root, value) -> Optional[list]:
+    nodes = [[root]]
+    while nodes:
+        node = nodes.pop()
+        if node[-1]:
+            if node[-1].val == value:
+                return node
+
+            a = node.copy()
+            a.append(node[-1].left)
+            nodes.append(a)
+            b = node.copy()
+            b.append(node[-1].right)
+            nodes.append(b)
+    return None
