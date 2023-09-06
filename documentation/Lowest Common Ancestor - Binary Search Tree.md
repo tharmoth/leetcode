@@ -98,4 +98,4 @@ We could simplify the if statements, but I do not believe it is worth the increa
 
 ### Tags:
 
-#bianry-tree #search #binary-search-tree
+#bianry-tree #search #binary-search-tree #binary-search
